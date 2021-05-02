@@ -9,12 +9,16 @@ const arr = [1, 2, 3, 4, 5];
  */
 const map = (arr, fn) => {
   return arr.reduce((acc, num, index) => {
-    acc[index] = fn(num);
+    acc[index] = fn(num, 2);
     return acc;
   }, []);
 };
 
-const mapped = map(arr, (num) => num * 2);
+const multiply = (num, times) => {
+  return num * times;
+};
+
+const mapped = map(arr, multiply);
 
 console.log(mapped);
 
